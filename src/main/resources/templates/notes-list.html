@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Notes List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5"><b>Notes List</b></h1>
+    <ul class="ps-0">
+        <li th:each="note : ${notes}" class="d-flex flex-column pb-3">
+            <b><span th:text="${note.title}"></span></b>
+            <span th:text="${note.content}"></span>
+            <a th:href="@{/note/edit(id=${note.id})}" class="color-blue pt-2">Edit</a>
+            <form th:action="@{/note/delete}" method="post">
+                <input type="hidden" name="id" th:value="${note.id}"/>
+                <button type="submit" class="btn btn-primary mt-2">Delete</button>
+            </form>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

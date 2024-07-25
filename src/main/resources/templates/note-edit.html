@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Edit Note</title>
+</head>
+<body>
+<h1>Edit Note</h1>
+<form th:action="@{/note/edit}" method="post">
+    <input type="hidden" th:name="id" th:value="${note.id}" />
+    <p>Title: <input type="text" th:name="title" th:value="${note.title}" /></p>
+    <p>Content: <textarea th:name="content">${note.content}</textarea></p>
+    <button type="submit">Update</button>
+</form>
+<a href="/note/list">Cancel</a>
+</body>
+</html>

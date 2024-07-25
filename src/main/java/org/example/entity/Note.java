@@ -1,28 +1,13 @@
 package org.example.entity;
 
 public class Note {
-
-    private int id;
+    private long id;
     private String title;
     private String content;
 
-
-    public Note(int id, String title, String content) {
+    public Note(long id, String title, String content) {
         this.id = id;
         this.title = title;
-        this.content = content;
-
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setContent(String content) {
         this.content = content;
     }
 
@@ -30,12 +15,23 @@ public class Note {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getContent() {
         return content;
     }
-}
 
+    public void setContent(String content) {
+        this.content = content;
+    }
+}
