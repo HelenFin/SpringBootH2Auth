@@ -19,7 +19,7 @@ public class NoteController {
 
     @GetMapping("/list")
     public String listNotes(Model model) {
-        List<Note> notes = noteService.listAll(); // Використовуємо noteService для отримання нотаток
+        List<Note> notes = noteService.listAll();
         model.addAttribute("notes", notes);
         return "notes-list";
     }
