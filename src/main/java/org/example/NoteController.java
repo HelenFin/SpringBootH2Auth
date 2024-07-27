@@ -25,7 +25,6 @@ public class NoteController {
     }
 
 
-
     @GetMapping("/edit")
     public ModelAndView editNoteForm(@RequestParam("id") long id) {
         ModelAndView mav = new ModelAndView("note-edit");
